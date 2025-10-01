@@ -2,3 +2,10 @@ body
 {
     background-color: black;
 }
+
+iframe
+{
+    border-width: thick;
+    border-style: double;
+    border-color: beige;
+}
