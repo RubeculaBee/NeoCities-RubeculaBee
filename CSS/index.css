@@ -1,11 +1,28 @@
 body
 {
     background-color: black;
+    color: #FFFFAF;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#scrollbar
+{
+    width: 100%;
+
+    border-top: solid;
+    border-bottom: solid;
+
+    margin-bottom: 32px;
 }
 
 iframe
 {
     border-width: thick;
     border-style: double;
-    border-color: beige;
+
+    width: 800px;
+    height: 600px;
 }
