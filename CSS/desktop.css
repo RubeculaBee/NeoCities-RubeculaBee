@@ -1,4 +1,19 @@
 body
 {
     background-image: url("../Assets/Black-Flowers-Compressed.webp");
+
+    animation: bg-move 5s linear infinite;
+}
+
+@keyframes bg-move
+{
+    from
+    {
+        background-position: 0px 0px;
+    }
+
+    to
+    {
+        background-position: 1141px 761px;
+    }
 }
