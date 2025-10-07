@@ -10,25 +10,32 @@ function onLoad()
 // Sets the desktop animation's keyframes to be correctly positioned for smooth looping.
 function setDesktopAnimation()
 {
-    effect = document.querySelector("body").getAnimations()[0].effect
-    getBackgroundSize()
+    // Get the keyframe effect of the body's first animation (the scrolling background)
+    var effect = document.querySelector("body").getAnimations()[0].effect
+    // Get the dimension of the background
+    var bgDimensions = getBackgroundSize()
     
-    console.log(effect.getKeyframes())
-    
-    console.log("Changing Keyframes")
-    
-    effect.setKeyframes
-    ({
-            backgroundPositionX: ["0px", "200px"],
-            backgroundPositionY: ["0px", "200px"],
+    // Set the last keyframe of the backgrounds position to be equal to it's width and height
+    effect.setKeyframes({
+            backgroundPositionX: ["0px", `${bgDimensions[0]}px`],
+            backgroundPositionY: ["0px", `${bgDimensions[1]}px`],
     })
-    
-    console.log(effect.getKeyframes())
 }
 
+// Grabs the current desktop background and get it's dimensions
+// Returns an array containing the width and height, in that order
 function getBackgroundSize()
 {
-    bgURL = document.styleSheets[0].cssRules[0].style.backgroundImage
-    console.log(bgURL)
-    
+    // Get the url of the background image (the 0 index css rule is the body style rule)
+    var bgURL = document.styleSheets[0].cssRules[0].style.backgroundImage
+
+    //chop off the first 5 and last 2 characters (this removes the 'url("' and '")' parts specifically, leaving us with only the actual resource location)
+    bgURL = bgURL.substring(5, bgURL.length - 2)
+
+    // create an image object with that resource as it's source
+    var bgImg = new Image()
+    bgImg.src = bgURL
+
+    //return the dimensions
+    return [bgImg.width, bgImg.height]
 }

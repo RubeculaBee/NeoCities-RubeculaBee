@@ -1,3 +1,4 @@
+/* Body style should always be first style block, for javascript dunctionality */
 body
 {
     background-image: url("../Assets/Black-Flowers-Compressed.webp");
@@ -14,6 +15,6 @@ body
 
     to
     {
-        background-position: 1141px 761px;
+        background-position: 0px 0px;
     }
 }
