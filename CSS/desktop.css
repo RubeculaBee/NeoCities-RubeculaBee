@@ -3,18 +3,8 @@ body
 {
     background-image: url("../Assets/Black-Flowers-Compressed.webp");
 
-    animation: bg-move 5s linear infinite;
+    animation: bg-move 10s linear infinite;
 }
 
-@keyframes bg-move
-{
-    from
-    {
-        background-position: 0px 0px;
-    }
-
-    to
-    {
-        background-position: 0px 0px;
-    }
-}
+/* Keyframes declared but not initialised. Actual keyframes are initialised by desktop.js */
+@keyframes bg-move {}

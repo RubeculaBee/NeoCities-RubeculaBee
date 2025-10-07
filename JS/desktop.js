@@ -7,22 +7,22 @@ function onLoad()
     setDesktopAnimation()
 }
 
-// Sets the desktop animation's keyframes to be correctly positioned for smooth looping.
+// Sets the desktop animation's backgroundgPosition keyframes to be correctly positioned for smooth looping.
 function setDesktopAnimation()
 {
-    // Get the keyframe effect of the body's first animation (the scrolling background)
+    // Get the keyframe effect of the body's first animation (bg-move)
     var effect = document.querySelector("body").getAnimations()[0].effect
     // Get the dimension of the background
     var bgDimensions = getBackgroundSize()
     
-    // Set the last keyframe of the backgrounds position to be equal to it's width and height
+    // Set keyframes of the animation to move the background from (0,0) to (width, height)
     effect.setKeyframes({
             backgroundPositionX: ["0px", `${bgDimensions[0]}px`],
             backgroundPositionY: ["0px", `${bgDimensions[1]}px`],
     })
 }
 
-// Grabs the current desktop background and get it's dimensions
+// Grabs the current desktop background and gets its dimensions
 // Returns an array containing the width and height, in that order
 function getBackgroundSize()
 {
