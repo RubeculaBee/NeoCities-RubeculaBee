@@ -6,5 +6,38 @@ body
     animation: bg-move 10s linear infinite;
 }
 
+button
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+
+    width: 64px;
+    height: 96px;
+
+    background: linear-gradient(lightsteelblue 60%,lightblue);
+
+    border-width: 8px;
+    border-style: outset;
+    border-color: lightblue;
+
+    position: absolute;
+    top: 50px;
+    left: 50px;
+
+    align-content: center;
+}
+
+button:hover
+{
+    border-style: groove;
+}
+
+button:active
+{
+    border-style: inset;
+}
+
 /* Keyframes declared but not initialised. Actual keyframes are initialised by desktop.js */
 @keyframes bg-move {}
