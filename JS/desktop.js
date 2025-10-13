@@ -1,10 +1,46 @@
-
 window.addEventListener("load", onLoad)
 
 // Runs when the page loads
 function onLoad()
 {
     setDesktopAnimation()
+    
+    getMetadata().then(value => placeApps(value.apps))    
+}
+
+// Creates app buttons based on the desktop-apps.json metadata, and places them on the desktop
+function placeApps(apps)
+{
+    apps.forEach(app => 
+    {
+        button = document.createElement("button")
+        image = document.createElement("img")
+        text = document.createElement("b")
+
+        button.setAttribute("type", "button")
+        button.setAttribute("ondblclick", `window.location.href='${app.page}'`)
+        
+        image.setAttribute("class", "icon")
+        image.setAttribute("src", app.icon)
+        image.setAttribute("alt", app.alt)
+
+        text.innerText = app.name
+
+        button.appendChild(image)
+        button.appendChild(text)
+        
+        document.body.appendChild(button)
+    });
+}
+
+// retrieve all the JSON metadata objects
+// Has to be asynchronous due to fetch returning a promise.
+async function getMetadata()
+{
+    response = await fetch("../Metadata/desktop-apps.json")
+    metadata = await response.json();
+
+    return metadata
 }
 
 // Sets the desktop animation's backgroundgPosition keyframes to be correctly positioned for smooth looping.
