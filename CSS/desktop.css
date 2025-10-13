@@ -16,11 +16,15 @@ button
     width: 64px;
     height: 96px;
 
-    background: linear-gradient(lightsteelblue 60%,lightblue);
+    background: black;
 
-    border-width: 8px;
-    border-style: outset;
-    border-color: lightblue;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+
+    border-width: 4px;
+    border-style: solid;
+    border-color: blue;
 
     position: absolute;
     top: 50px;
@@ -29,14 +33,21 @@ button
     align-content: center;
 }
 
+.icon
+{
+    margin-top: 2px;
+    margin-bottom: 8px;
+}
+
 button:hover
 {
-    border-style: groove;
+    background-color: darkslateblue;
+    cursor: pointer;
 }
 
 button:active
 {
-    border-style: inset;
+    background-color: slateblue;
 }
 
 /* Keyframes declared but not initialised. Actual keyframes are initialised by desktop.js */
