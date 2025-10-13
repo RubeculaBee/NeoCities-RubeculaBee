@@ -16,8 +16,6 @@ body
 
     border-top: solid;
     border-bottom: solid;
-
-    margin-bottom: 32px;
 }
 
 iframe
@@ -27,4 +25,42 @@ iframe
 
     width: 800px;
     height: 600px;
+
+    margin-top: 32px;
+    margin-bottom: 16px;
+}
+
+button
+{
+    display: flex;
+    flex-direction: column;
+
+    height: 64px;
+    width: 128px;
+
+    background-color: black;
+    color: #FFFFAF;
+
+    font-family: 'Courier New', Courier, monospace;
+
+    border-color: #FFFFAF;
+    border-style: outset;
+    border-width: 4px;
+}
+
+button:hover
+{
+    background-color: #111111;
+    cursor: pointer;
+}
+
+button:active
+{
+    border-style: inset;
+}
+
+.icon
+{
+    height: 32px;
+    margin: 2px;
 }
