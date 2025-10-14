@@ -5,7 +5,7 @@
             "name":"About", 
             "icon":"../Assets/Icons/info-icon.svg",
             "page":"../HTML/about.html",
-            "color":"#0000ff",
+            "color":"blue",
             "alt": "Information Icon. Blue circle with a white lowercase i"
         }
     ]

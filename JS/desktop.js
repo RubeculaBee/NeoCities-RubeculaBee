@@ -19,6 +19,7 @@ function placeApps(apps)
 
         button.setAttribute("type", "button")
         button.setAttribute("ondblclick", `window.location.href='${app.page}'`)
+        button.setAttribute("style", `border-color: ${app.color};`)
         
         image.setAttribute("class", "icon")
         image.setAttribute("src", app.icon)
