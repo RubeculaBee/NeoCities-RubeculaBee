@@ -44,8 +44,10 @@ function placeApps(apps)
 
         // if the button type isn't set to "button", it will default to "submit" which is not what we want.
         button.setAttribute("type", "button")
+
         // Make it link to it's appropriate page
         button.setAttribute("ondblclick", `window.location.href='${app.page}'`)
+
         // Set it's position and it's border colour
         // these must be done in the same line, as the "setAttribute" method replaces any other instances of that attribute.
         button.setAttribute("style", `left: ${buttonX}px; top: ${buttonY}px; border-color: ${app.color}`)
@@ -58,7 +60,7 @@ function placeApps(apps)
         // put the title of the button in the text
         text.innerText = app.name
 
-        //put it al ltogether
+        //put it all together
         button.appendChild(image)
         button.appendChild(text)
         
