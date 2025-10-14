@@ -1,11 +1,32 @@
 window.addEventListener("load", onLoad)
 
+var desktopWidth;
+var desktopHeight;
+var appWidth;
+var appHeight;
+
 // Runs when the page loads
 function onLoad()
 {
+    initialiseVariables()
+
     setDesktopAnimation()
     
     getMetadata().then(value => placeApps(value.apps))    
+}
+
+function initialiseVariables()
+{
+    desktopWidth = window.innerWidth
+    desktopHeight = window.innerHeight
+
+    // Substrings taken to chop off the 'px' at the end of the app width/height
+    // the "px" prevents us from doign math with teh substring.
+    appWidth = document.styleSheets[0].cssRules[1].style.width
+    appWidth = appWidth.substring(0, appWidth.length - 2)
+
+    appHeight = document.styleSheets[0].cssRules[1].style.height
+    appHeight = appHeight.substring(0, appHeight.length - 2)
 }
 
 // Creates app buttons based on the desktop-apps.json metadata, and places them on the desktop
@@ -17,21 +38,38 @@ function placeApps(apps)
         image = document.createElement("img")
         text = document.createElement("b")
 
+        //Choose a random location for the button, ensuring that it stays fully within the bounds of the screen
+        var buttonX = randInt(0, desktopWidth - appWidth)
+        var buttonY = randInt(0, desktopHeight - appHeight)
+
+        // if the button type isn't set to "button", it will default to "submit" which is not what we want.
         button.setAttribute("type", "button")
+        // Make it link to it's appropriate page
         button.setAttribute("ondblclick", `window.location.href='${app.page}'`)
-        button.setAttribute("style", `border-color: ${app.color};`)
+        // Set it's position and it's border colour
+        // these must be done in the same line, as the "setAttribute" method replaces any other instances of that attribute.
+        button.setAttribute("style", `left: ${buttonX}px; top: ${buttonY}px; border-color: ${app.color}`)
         
+        // Give the icon it's image and alt text
         image.setAttribute("class", "icon")
         image.setAttribute("src", app.icon)
         image.setAttribute("alt", app.alt)
 
+        // put the title of the button in the text
         text.innerText = app.name
 
+        //put it al ltogether
         button.appendChild(image)
         button.appendChild(text)
         
+        // Add it to the html document
         document.body.appendChild(button)
     });
+}
+
+function randInt(min, max)
+{
+    return Math.floor(Math.random() * max) + min
 }
 
 // retrieve all the JSON metadata objects
