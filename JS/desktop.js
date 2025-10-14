@@ -12,7 +12,7 @@ function onLoad()
 
     setDesktopAnimation()
     
-    getMetadata().then(value => placeApps(value.apps))    
+    getMetadata().then(metadata => placeApps(metadata.apps))    
 }
 
 function initialiseVariables()
