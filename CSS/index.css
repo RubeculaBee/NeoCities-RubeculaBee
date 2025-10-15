@@ -13,6 +13,8 @@ body
 h1
 {
     background-color: black;
+
+    font-size: 2.5em;
 }
 
 #scrollbar
@@ -23,6 +25,27 @@ h1
     border-bottom: solid;
 
     background-color: black;
+}
+
+#scrolltext
+{
+    font-size: 1.5em;
+
+    animation: scroll 15s linear infinite;
+    overflow: hidden;
+}
+
+@keyframes scroll
+{
+    from
+    {
+        transform: translateX(100%)
+    }
+
+    to
+    {
+        transform: translateX(-100%)
+    }
 }
 
 iframe
