@@ -38,9 +38,14 @@ function placeApps(apps)
         image = document.createElement("img")
         text = document.createElement("b")
 
-        //Choose a random location for the button, ensuring that it stays fully within the bounds of the screen
+        // Choose a random location for the button, ensuring that it stays fully within the bounds of the screen
         var buttonX = randInt(0, desktopWidth - appWidth)
         var buttonY = randInt(0, desktopHeight - appHeight)
+        
+        // Choose a random direction and start time for the button's shake animation
+        const possibleDirections = ["normal", "reverse", "alternate", "alternate-reverse"]
+        var animDir = possibleDirections[randInt(0,3)]
+        var animStartTime = Math.random()
 
         // if the button type isn't set to "button", it will default to "submit" which is not what we want.
         button.setAttribute("type", "button")
@@ -48,9 +53,15 @@ function placeApps(apps)
         // Make it link to it's appropriate page
         button.setAttribute("ondblclick", `window.location.href='${app.page}'`)
 
-        // Set it's position and it's border colour
+        // Set all of the button's unique style properties.
         // these must be done in the same line, as the "setAttribute" method replaces any other instances of that attribute.
-        button.setAttribute("style", `left: ${buttonX}px; top: ${buttonY}px; border-color: ${app.color}`)
+        button.setAttribute("style",
+            `left:${buttonX}px; ` +
+            `top:${buttonY}px; ` +
+            `border-color:${app.color}; ` +
+            `animation-direction:${animDir}; ` +
+            `animation-delay:-${animStartTime}s; `
+        )
         
         // Give the icon it's image and alt text
         image.setAttribute("class", "icon")
@@ -66,12 +77,14 @@ function placeApps(apps)
         
         // Add it to the html document
         document.body.appendChild(button)
+
+        console.log(button)
     });
 }
 
 function randInt(min, max)
 {
-    return Math.floor(Math.random() * max) + min
+    return Math.floor(Math.random() * (max + 1)) + min
 }
 
 // retrieve all the JSON metadata objects
