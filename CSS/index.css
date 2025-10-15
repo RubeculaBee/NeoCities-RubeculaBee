@@ -1,6 +1,6 @@
 body
 {
-    background-color: black;
+    background-image: url("../Assets/index-wallpaper.webp");
     color: #FFFFAF;
 
     font-family: 'Courier New', Courier, monospace;
@@ -10,12 +10,19 @@ body
     align-items: center;
 }
 
+h1
+{
+    background-color: black;
+}
+
 #scrollbar
 {
     width: 100%;
 
     border-top: solid;
     border-bottom: solid;
+
+    background-color: black;
 }
 
 iframe
