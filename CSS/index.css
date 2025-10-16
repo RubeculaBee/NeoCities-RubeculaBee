@@ -25,6 +25,8 @@ h1
     border-bottom: solid;
 
     background-color: black;
+
+    overflow: hidden;
 }
 
 #scrolltext
@@ -32,7 +34,6 @@ h1
     font-size: 1.5em;
 
     animation: scroll 15s linear infinite;
-    overflow: hidden;
 }
 
 @keyframes scroll
