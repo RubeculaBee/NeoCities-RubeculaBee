@@ -5,5 +5,4 @@ if [ "$1" = "-m" ]; then
 fi
 
 git log > "Metadata/changelog.txt"
-echo
-echo "Log Updated"
+echo -e "\nLog Updated"
