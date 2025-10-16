@@ -7,6 +7,13 @@
             "page":"../HTML/about.html",
             "color":"blue",
             "alt": "Information Icon. Blue circle with a white lowercase i"
+        },
+        {
+            "name":"Changes",
+            "icon":"../Assets/Icons/terminal.svg",
+            "page":"../HTML/changelog.html",
+            "color":"yellow",
+            "alt":"Shell terminal icon. Yellow text of a $ followed by a _"
         }
     ]
 }
