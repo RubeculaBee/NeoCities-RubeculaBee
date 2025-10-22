@@ -5,8 +5,7 @@ var desktopHeight;
 var appWidth;
 var appHeight;
 
-var mouseDown;
-var mousePosition = {"x": 0, "y": 0};
+var heldApp;
 
 // Runs when the page loads
 function onLoad()
@@ -22,9 +21,7 @@ function onLoad()
 
 function addMouseEvents()
 {
-    document.addEventListener('mousedown', () => {mouseDown = true})
-    document.addEventListener('mouseup', () => {mouseDown = false})
-    document.addEventListener('mousemove', (event) => {mousePosition.x = event.clientX; mousePosition.y = event.clientY})
+    document.addEventListener('mousemove', (event) => dragApp(event))
 }
 
 function initialiseVariables()
@@ -64,7 +61,8 @@ function placeApps(apps)
 
         // Make it link to it's appropriate page
         button.setAttribute("ondblclick", `window.location.href='${app.page}'`)
-        button.setAttribute("onmousemove", "dragApp(this)")
+        button.setAttribute("onmousedown", "heldApp = this")
+        button.setAttribute("onmouseup", "heldApp = null")
 
         // Set all of the button's unique style properties.
         // these must be done in the same line, as the "setAttribute" method replaces any other instances of that attribute.
@@ -97,15 +95,15 @@ function placeApps(apps)
     });
 }
 
-function dragApp(app)
-{    
-    if(mouseDown)
-    {
-        app.setAttribute("style", 
-            `top:${mousePosition.y - 32}px; ` +
-            `left:${mousePosition.x - 32}px `
+function dragApp(mouseEvent)
+{
+    console.log(heldApp)
+
+    if(heldApp instanceof HTMLButtonElement)
+        heldApp.setAttribute("style", 
+            `top:${mouseEvent.y - 32}px; ` +
+            `left:${mouseEvent.x - 32}px `
         )
-    }
 }
 
 function randInt(min, max)
