@@ -47,12 +47,13 @@ button
 button:hover
 {
     background-color: darkslateblue;
-    cursor: pointer;
+    cursor: grab;
 }
 
 button:active
 {
     background-color: slateblue;
+    cursor: grabbing;
 }
 
 .icon
