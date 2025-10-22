@@ -2,8 +2,8 @@ window.addEventListener("load", onLoad)
 
 var desktopWidth;
 var desktopHeight;
-var appWidth;
-var appHeight;
+var appWidth = 32;
+var appHeight = 32;
 
 var heldApp;
 
@@ -28,14 +28,6 @@ function initialiseVariables()
 {
     desktopWidth = window.innerWidth
     desktopHeight = window.innerHeight
-
-    // Substrings taken to chop off the 'px' at the end of the app width/height
-    // the "px" prevents us from doign math with teh substring.
-    appWidth = document.styleSheets[0].cssRules[1].style.width
-    appWidth = appWidth.substring(0, appWidth.length - 2)
-
-    appHeight = document.styleSheets[0].cssRules[1].style.height
-    appHeight = appHeight.substring(0, appHeight.length - 2)
 }
 
 // Creates app buttons based on the desktop-apps.json metadata, and places them on the desktop
@@ -97,6 +89,7 @@ function placeApps(apps)
 
 function dragApp(mouseEvent)
 {
+    // We don't want to attempt to access the style of heldApp if heldApp is null
     if(heldApp instanceof HTMLButtonElement)
     {
         heldApp.style.top = `${mouseEvent.y - 32}px`
