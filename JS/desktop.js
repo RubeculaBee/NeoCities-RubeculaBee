@@ -97,13 +97,11 @@ function placeApps(apps)
 
 function dragApp(mouseEvent)
 {
-    console.log(heldApp)
-
     if(heldApp instanceof HTMLButtonElement)
-        heldApp.setAttribute("style", 
-            `top:${mouseEvent.y - 32}px; ` +
-            `left:${mouseEvent.x - 32}px `
-        )
+    {
+        heldApp.style.top = `${mouseEvent.y - 32}px`
+        heldApp.style.left = `${mouseEvent.x - 32}px`
+    }
 }
 
 function randInt(min, max)
