@@ -5,14 +5,24 @@ var desktopHeight;
 var appWidth;
 var appHeight;
 
+var mouseDown;
+
 // Runs when the page loads
 function onLoad()
 {
     initialiseVariables()
 
     setDesktopAnimation()
+
+    addMouseEvents()
     
-    getMetadata().then(metadata => placeApps(metadata.apps))    
+    getMetadata().then(metadata => placeApps(metadata.apps))
+}
+
+function addMouseEvents()
+{
+    document.addEventListener('mousedown', () => {mouseDown = true})
+    document.addEventListener('mouseup', () => {mouseDown = false})
 }
 
 function initialiseVariables()
@@ -52,6 +62,7 @@ function placeApps(apps)
 
         // Make it link to it's appropriate page
         button.setAttribute("ondblclick", `window.location.href='${app.page}'`)
+        button.setAttribute("onmousemove", "dragApp()")
 
         // Set all of the button's unique style properties.
         // these must be done in the same line, as the "setAttribute" method replaces any other instances of that attribute.
@@ -80,6 +91,11 @@ function placeApps(apps)
 
         console.log(button)
     });
+}
+
+function dragApp()
+{    
+    console.log("It's on the mouse: " + MouseEvent.button)
 }
 
 function randInt(min, max)
