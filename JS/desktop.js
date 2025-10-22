@@ -78,6 +78,8 @@ function placeApps(apps)
         image.setAttribute("class", "icon")
         image.setAttribute("src", app.icon)
         image.setAttribute("alt", app.alt)
+        // Make sure the user can't drag the icon
+        image.setAttribute("draggable", false)
 
         // put the title of the button in the text
         text.innerText = app.name
@@ -95,7 +97,7 @@ function placeApps(apps)
 
 function dragApp()
 {    
-    console.log("It's on the mouse: " + MouseEvent.button)
+    console.log("It's on the mouse: " + mouseDown)
 }
 
 function randInt(min, max)
