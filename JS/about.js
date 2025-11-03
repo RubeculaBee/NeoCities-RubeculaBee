@@ -9,19 +9,18 @@ function onLoad()
 
 function activateText(button)
 {
+    if(activeSide != null)
+        activeSide.style.color = ""
+
     if(button == activeSide)
     {
         activeSide = null
-        button.style.color = ""
         return
     }
-
-    if(activeSide != null)
-        activeSide.style.color = ""
     
     activeSide = button
 
-    button.style.color = "yellow"
+    activeSide.style.color = "yellow"
 
     console.log(activeSide)
 }
