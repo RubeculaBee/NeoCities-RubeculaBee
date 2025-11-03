@@ -11,7 +11,7 @@ body
     display: flex;
     justify-content: space-between;
 
-    border-bottom: 2px solid;
+    color: #666600;
 
     user-select: none;
 
@@ -22,6 +22,8 @@ body
 {
     display: flex;
     justify-content: space-between;
+
+    border-top: 2px solid;
 }
 
 p
@@ -33,7 +35,7 @@ p
 
 h1:hover
 {
-    color: #ffff84;
+    color: #cccc00;
 
     cursor: pointer;
 }
