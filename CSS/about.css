@@ -33,6 +33,44 @@ p
     font-size: 1.5em;
 }
 
+#left
+{
+    transform: translateX(-110%);
+    /* animation: slide-in-left 0.5s ease-in */
+}
+
+#right
+{
+    transform: translateX(110%);
+    /* animation: slide-in-right 0.5s ease-in */
+}
+
+@keyframes slide-in-left
+{
+    from
+    {
+        transform: translateX(-110%);
+    }
+
+    to
+    {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes slide-in-right
+{
+    from
+    {
+        transform: translateX(110%);
+    }
+
+    to
+    {
+        transform: translateX(0%);
+    }
+}
+
 h1:hover
 {
     color: #cccc00;
