@@ -1,26 +1,26 @@
 window.addEventListener("load", onLoad)
 
-var activeSide
+var activeButton
 
 function onLoad()
 {
     console.log("Load")
 }
 
-function activateText(button)
+function activateText(buttonClicked)
 {
-    if(activeSide != null)
-        activeSide.style.color = ""
+    if(activeButton != null)
+        activeButton.style.color = ""
 
-    if(button == activeSide)
+    if(buttonClicked == activeButton)
     {
-        activeSide = null
+        activeButton = null
         return
     }
     
-    activeSide = button
+    activeButton = buttonClicked
 
-    activeSide.style.color = "yellow"
+    activeButton.style.color = "yellow"
 
-    console.log(activeSide)
+    console.log(activeButton)
 }
