@@ -36,13 +36,13 @@ p
 #left
 {
     transform: translateX(-110%);
-    animation: slide-in-left 0.5s ease-in paused
+    animation: slide-in-left 0.5s ease paused
 }
 
 #right
 {
     transform: translateX(110%);
-    animation: slide-in-right 0.5s ease-in paused
+    animation: slide-in-right 0.5s ease paused
 }
 
 @keyframes slide-in-left
