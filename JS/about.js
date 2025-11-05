@@ -7,7 +7,7 @@ function onLoad()
     console.log("Load")
 }
 
-function activateText(buttonClicked)
+function activateSide(buttonClicked)
 {
     if(activeSide.button != null)
     {
