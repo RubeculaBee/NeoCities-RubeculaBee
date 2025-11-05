@@ -1,6 +1,6 @@
 window.addEventListener("load", onLoad)
 
-var activeButton
+var activeSide = {"button": null, "text": null}
 
 function onLoad()
 {
@@ -9,18 +9,27 @@ function onLoad()
 
 function activateText(buttonClicked)
 {
-    if(activeButton != null)
-        activeButton.style.color = ""
-
-    if(buttonClicked == activeButton)
+    if(activeSide.button != null)
     {
-        activeButton = null
+        activeSide.button.style.color = ""
+        textSlide(activeSide.text, "reverse")
+    }
+
+    if(buttonClicked == activeSide.button)
+    {
+        activeSide.button = null
+        activeSide.text = null
         return
     }
     
-    activeButton = buttonClicked
+    activeSide.button = buttonClicked
+    activeSide.text = document.getElementById(buttonClicked.dataset.side)
+    
+    activeSide.button.style.color = "yellow"
+    textSlide(activeSide.text, "normal")
+}
 
-    activeButton.style.color = "yellow"
-
-    console.log(activeButton)
+function textSlide(text, direction)
+{
+    console.log(`Playing ${direction} animation for ${text.id}`)
 }
