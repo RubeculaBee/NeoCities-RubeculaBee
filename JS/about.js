@@ -32,4 +32,19 @@ function activateSide(buttonClicked)
 function textSlide(text, direction)
 {
     console.log(`Playing ${direction} animation for ${text.id}`)
+
+    text.style.animationDirection = direction
+    
+    // accessing clientHeight forces a repaint, causing the animation to reset its progress to the beginning when the id is readded
+    let tempId = text.id
+    text.id = ""
+    text.clientHeight
+    text.id = tempId
+    
+    text.style.animationPlayState = "running"
+    
+    if(direction == "normal")
+        text.style.transform = "translateX(0%)"
+    if(direction == "reverse")
+        text.style.transform = `translateX(${110 * (text.id == "left" ? -1 : 1)}%)`
 }
