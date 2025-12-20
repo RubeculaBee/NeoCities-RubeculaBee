@@ -86,5 +86,21 @@ img
     opacity: 0.33;
 
     position: absolute;
-    left: 36%
+    left: 36%;
+    animation: wander 5s ease-in-out infinite
+}
+
+@keyframes wander
+{
+    0% {transform: translate(0px, 0px);}
+
+    20% {transform: translate(16px, -4px);}
+
+    40% {transform: translate(-4px, 16px);}
+
+    60% {transform: translate(-4px, -16px);}
+
+    80% {transform: translate(16px, 4px);}
+
+    100% {transform: translate(0px, 0px);}
 }
