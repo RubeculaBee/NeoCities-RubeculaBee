@@ -86,7 +86,10 @@ img
     opacity: 0.33;
 
     position: absolute;
+    top: 40%;
     left: 36%;
+    z-index: -1;
+
     animation: wander 5s ease-in-out infinite
 }
 
