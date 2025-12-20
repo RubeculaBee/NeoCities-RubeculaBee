@@ -79,3 +79,12 @@ h1:hover
 
     cursor: pointer;
 }
+
+img
+{
+    width: 224px;
+    opacity: 0.33;
+
+    position: absolute;
+    left: 36%
+}
