@@ -107,3 +107,31 @@ img
 
     100% {transform: translate(0px, 0px);}
 }
+
+#next
+{
+    display: flex;
+    justify-content: center;
+    
+    width: 100%;
+    user-select: none;
+}
+
+#next:hover
+{
+    color: #cccc00;
+    cursor: pointer;
+}
+
+.center
+{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+
+.wide
+{
+    width: 90%;
+}
