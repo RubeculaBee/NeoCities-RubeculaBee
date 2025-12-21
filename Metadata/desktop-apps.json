@@ -14,6 +14,13 @@
             "page":"../HTML/changelog.html",
             "color":"yellow",
             "alt":"Shell terminal icon. Yellow text of a $ followed by a _"
+        },
+        {
+            "name":"Blog", 
+            "icon":"../Assets/Icons/blog-icon.webp",
+            "page":"../HTML/blog.html",
+            "color":"white",
+            "alt": "Paper Icon. White circle with a tan sheet of paper, and a quill writing on it"
         }
     ]
 }
