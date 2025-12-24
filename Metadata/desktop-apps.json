@@ -14,6 +14,13 @@
             "page":"../HTML/changelog.html",
             "color":"yellow",
             "alt":"Shell terminal icon. Yellow text of a $ followed by a _"
+        },
+        {
+            "name":"Blog",
+            "icon":"../Assets/Icons/info-icon.svg",
+            "page":"../HTML/blog.html",
+            "color":"white",
+            "alt":"Paper with quil"
         }
     ]
 }
