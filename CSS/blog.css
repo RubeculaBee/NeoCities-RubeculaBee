@@ -1,6 +1,7 @@
 body
 {
     background-color: powderblue;
+    background-image: url("../Assets/blog-bg.webp");
 
     font-family: 'Comic Sans MS';
 
@@ -9,6 +10,22 @@ body
     align-items: center;
 
     overflow-x: hidden;
+
+    animation: bg-scroll infinite 4s linear 
+}
+
+@keyframes bg-scroll
+{
+    0%   
+    {
+        background-position-x: 0px;
+        background-position-y: 0px;
+    }
+    100% 
+    {
+        background-position-x: -256px;
+        background-position-y: -256px;
+    }
 }
 
 h1
@@ -18,8 +35,11 @@ h1
     
     position: sticky;
     top: 0px;
+    margin-top: -1em;
 
     background-color: powderblue;
+
+    user-select: none;
 }
 
 .page
@@ -32,6 +52,9 @@ h1
 
     padding: 1em;
     font-size: 1.5em;
+
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 i
