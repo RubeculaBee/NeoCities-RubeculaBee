@@ -1,0 +1,79 @@
+body
+{
+    background-color: powderblue;
+    background-image: url("../Assets/blog-bg.webp");
+
+    font-family: 'Comic Sans MS';
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow-x: hidden;
+
+    animation: bg-scroll infinite 4s linear 
+}
+
+@keyframes bg-scroll
+{
+    0%   
+    {
+        background-position-x: 0px;
+        background-position-y: 0px;
+    }
+    100% 
+    {
+        background-position-x: -256px;
+        background-position-y: -256px;
+    }
+}
+
+h1
+{
+    border-bottom: 4px solid;
+    width: 150%;
+    
+    position: sticky;
+    top: 0px;
+    margin-top: -1em;
+
+    background-color: powderblue;
+
+    user-select: none;
+}
+
+.page
+{
+    background-color: aliceblue;
+    border-style: groove;
+    border-width: 0.5em;
+
+    width: 80%;
+
+    padding: 1em;
+    font-size: 1.5em;
+
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+i
+{
+    width: 100%;
+    display: flex;
+    justify-content: right;
+}
+
+b
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+p
+{
+    margin-top: 1.5em;
+
+    text-indent: 2em;
+}
