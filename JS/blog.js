@@ -5,6 +5,8 @@ fr = new FileReader()
 function onLoad()
 {
 	getPosts().then(post => makePages(post))
+
+	foldertest()
 }
 
 async function getPosts()
@@ -18,7 +20,8 @@ async function getPosts()
 	response = await fetch("../Assets/blog-posts/Lorem Ipsum.txt")
 	file = await response.blob()
 
-	post.date = file.lastModified
+
+	post.date = new Date(file.lastModified).toDateString()
 	post.title = file.name
 
 	fr.readAsText(file)
@@ -28,6 +31,13 @@ async function getPosts()
 			resolve(post)
 		}
 	});
+}
+
+async function foldertest()
+{
+	testResponse = await fetch("../Assets/blog-posts/")
+	folder = await testResponse.blob()
+	console.log(folder)
 }
 
 function makePages(post)
@@ -43,7 +53,6 @@ function makePages(post)
 
 	for(let part in content)
 	{
-		console.log(`${content[part]} ${part}: ${post[part]}`)
 		content[part].innerText = post[part]
 		page.appendChild(content[part])
 	}
