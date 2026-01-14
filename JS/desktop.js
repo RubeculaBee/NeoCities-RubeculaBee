@@ -82,8 +82,6 @@ function placeApps(apps)
         
         // Add it to the html document
         document.body.appendChild(button)
-
-        console.log(button)
     });
 }
 
@@ -115,8 +113,9 @@ async function getMetadata()
 // Sets the desktop animation's backgroundgPosition keyframes to be correctly positioned for smooth looping.
 function setDesktopAnimation()
 {
+    setBackground()
     // Get the keyframe effect of the body's first animation (bg-move)
-    var effect = document.querySelector("body").getAnimations()[0].effect
+    var effect = document.body.getAnimations()[0].effect
     // Get the dimension of the background
     var bgDimensions = getBackgroundSize()
     
@@ -127,12 +126,18 @@ function setDesktopAnimation()
     })
 }
 
+function setBackground()
+{
+    let options = ["Black-Flowers-Compressed", "White-Bricks"]
+    document.body.style.backgroundImage = `url(../Assets/Backgrounds/${options[randInt(0, options.length-1)]}.webp)`
+}
+
 // Grabs the current desktop background and gets its dimensions
 // Returns an array containing the width and height, in that order
 function getBackgroundSize()
 {
     // Get the url of the background image (the 0 index css rule is the body style rule)
-    var bgURL = document.styleSheets[0].cssRules[0].style.backgroundImage
+    var bgURL = document.body.style.backgroundImage
 
     //chop off the first 5 and last 2 characters (this removes the 'url("' and '")' parts specifically, leaving us with only the actual resource location)
     bgURL = bgURL.substring(5, bgURL.length - 2)
