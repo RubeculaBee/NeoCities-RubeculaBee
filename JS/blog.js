@@ -15,7 +15,7 @@ async function getPosts()
 		text: ''
 	}
 
-	response = await fetch("../Metadata/blog-posts/Lorem Ipsum.txt")
+	response = await fetch("../Assets/blog-posts/Lorem Ipsum.txt")
 	file = await response.blob()
 
 	post.date = file.lastModified
