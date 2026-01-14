@@ -93,7 +93,7 @@ img.taskbarIcon
 
 img.taskbarIcon:hover
 {
-    background-color: silver;
+    background-color: darkgray;
 }
 
 img.taskbarIcon:active
