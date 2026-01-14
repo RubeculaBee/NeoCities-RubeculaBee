@@ -4,40 +4,42 @@ fr = new FileReader()
 
 function onLoad()
 {
-	getPosts().then(post => makePages(post))
-
-	foldertest()
+	getPosts().then(promises => {
+		for(promise of promises)
+			promise.then(post => makePages(post))
+	})
 }
 
 async function getPosts()
 {
-	var post = {
-		date: '',
-		title: '',
-		text: ''
-	}
+	var posts = []
+	var list = await fetch("../Metadata/post-list.json")
+	list = await list.json()
 
-	response = await fetch("../Assets/blog-posts/Lorem Ipsum.txt")
-	file = await response.blob()
-
-
-	post.date = new Date(file.lastModified).toDateString()
-	post.title = file.name
-
-	fr.readAsText(file)
-	return new Promise((resolve) => {
-		fr.onload = () => {
-			post.text = fr.result
-			resolve(post)
+	for(let name of list)
+	{
+		let post = {
+			date: '',
+			title: '',
+			text: ''
 		}
-	});
-}
 
-async function foldertest()
-{
-	testResponse = await fetch("../Assets/blog-posts/")
-	folder = await testResponse.blob()
-	console.log(folder)
+		file = await fetch(`../Assets/blog-posts/${name}`)
+		file = await file.blob()
+
+
+		post.date = new Date(file.lastModified).toDateString()
+		post.title = file.name
+
+		fr.readAsText(file)
+		posts.push(new Promise((resolve) => {
+			fr.onload = () => {
+				post.text = fr.result
+				resolve(post)
+			}
+		}))
+	}
+	return posts
 }
 
 function makePages(post)

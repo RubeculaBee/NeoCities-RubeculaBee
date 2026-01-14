@@ -1,5 +1,5 @@
 
-read -a posts <<< $(ls -x Assets/blog-posts/)
+read -a posts <<< $(ls -t -x Assets/blog-posts/)
 json='['
 for post in ${posts[@]}; do
     json="$json\"$post\", "
