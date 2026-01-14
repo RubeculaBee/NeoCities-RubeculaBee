@@ -17,7 +17,7 @@
         },
         {
             "name":"Blog", 
-            "icon":"../Assets/Icons/blog-icon.webp",
+            "icon":"../Assets/Icons/blog-icon.svg",
             "page":"../HTML/blog.html",
             "color":"white",
             "alt": "Paper Icon. White circle with a tan sheet of paper, and a quill writing on it"

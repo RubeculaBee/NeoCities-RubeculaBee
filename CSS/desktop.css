@@ -66,7 +66,7 @@ button:active
 
 div#taskbar
 {
-    height: 2.5em;
+    height: 3.5em;
 
     position:absolute;
     left:0px;
@@ -76,4 +76,27 @@ div#taskbar
     background-color: slateblue;
     border-style: outset;
     border-width: 4px;
+
+    display: flex;
+    flex-direction: row;
+    gap:4px;
+
+    box-sizing: border-box;
+    padding:4px;
+}
+
+img.taskbarIcon
+{
+    background-color: lightslategray;
+    border-style:outset;
+}
+
+img.taskbarIcon:hover
+{
+    background-color: silver;
+}
+
+img.taskbarIcon:active
+{
+    border-style: inset;
 }
