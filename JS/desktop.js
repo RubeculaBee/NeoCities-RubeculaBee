@@ -40,8 +40,8 @@ function placeApps(apps)
         text = document.createElement("b")
 
         // Choose a random location for the button, ensuring that it stays fully within the bounds of the screen
-        var buttonX = randInt(0, desktopWidth - appWidth)
-        var buttonY = randInt(0, desktopHeight - appHeight)
+        var buttonX = randInt(0, desktopWidth - 64)
+        var buttonY = randInt(0, desktopHeight - 96)
         
         // Choose a random direction and start time for the button's shake animation
         const possibleDirections = ["normal", "reverse", "alternate", "alternate-reverse"]
