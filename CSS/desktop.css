@@ -63,3 +63,17 @@ button:active
 }
 /* Keyframes declared but not initialised. Actual keyframes are initialised by desktop.js */
 @keyframes bg-move {}
+
+div#taskbar
+{
+    height: 2.5em;
+
+    position:absolute;
+    left:0px;
+    right: 0px;
+    bottom: 0px;
+
+    background-color: slateblue;
+    border-style: outset;
+    border-width: 4px;
+}
