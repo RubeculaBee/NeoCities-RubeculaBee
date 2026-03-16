@@ -21,6 +21,13 @@
             "page":"../HTML/blog.html",
             "color":"white",
             "alt": "Paper Icon. White circle with a tan sheet of paper, and a quill writing on it"
+        },
+        {
+            "name":"GBook",
+            "icon":"../Assets/Icons/guestbook.svg",
+            "page":"../HTML/gbook.html",
+            "color":"skyblue",
+            "alt": "a yellow smiley"
         }
     ]
 }
