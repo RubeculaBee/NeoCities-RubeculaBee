@@ -28,6 +28,34 @@
             "page":"../HTML/gbook.html",
             "color":"pink",
             "alt": "a yellow smiley"
+        },
+        {
+            "name":"Lcked",
+            "icon":"../Assets/Icons/locked.svg",
+            "page":"../HTML/locked.html",
+            "color":"gray",
+            "alt": "a grey metallic key lock"
+        },
+        {
+            "name":"Lcked",
+            "icon":"../Assets/Icons/locked.svg",
+            "page":"../HTML/locked.html",
+            "color":"gray",
+            "alt": "a grey metallic key lock"
+        },
+        {
+            "name":"Lcked",
+            "icon":"../Assets/Icons/locked.svg",
+            "page":"../HTML/locked.html",
+            "color":"gray",
+            "alt": "a grey metallic key lock"
+        },
+        {
+            "name":"Lcked",
+            "icon":"../Assets/Icons/locked.svg",
+            "page":"../HTML/locked.html",
+            "color":"gray",
+            "alt": "a grey metallic key lock"
         }
     ]
 }
