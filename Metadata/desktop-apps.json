@@ -19,7 +19,7 @@
             "name":"Blog", 
             "icon":"../Assets/Icons/blog-icon.svg",
             "page":"../HTML/blog.html",
-            "color":"white",
+            "color":"skyblue",
             "alt": "Paper Icon. White circle with a tan sheet of paper, and a quill writing on it"
         },
         {
@@ -28,6 +28,13 @@
             "page":"../HTML/gbook.html",
             "color":"pink",
             "alt": "a yellow smiley"
+        },
+        {
+            "name":"Credit",
+            "icon":"../Assets/Icons/credit.svg",
+            "page":"../HTML/credit.html",
+            "color":"white",
+            "alt": "The copyright symbol"
         },
         {
             "name":"Lckd",
