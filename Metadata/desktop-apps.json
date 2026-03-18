@@ -37,11 +37,11 @@
             "alt": "The copyright symbol"
         },
         {
-            "name":"Lckd",
-            "icon":"../Assets/Icons/locked.svg",
-            "page":"../HTML/locked.html",
-            "color":"gray",
-            "alt": "a grey metallic key lock"
+            "name":"Artshow",
+            "icon":"../Assets/Icons/artshow.svg",
+            "page":"../HTML/artshow.html",
+            "color":"lightgreen",
+            "alt": "a painters pallate, with paint and brushes"
         },
         {
             "name":"Lckd",
